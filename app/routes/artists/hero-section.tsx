@@ -4,9 +4,10 @@ import {ChevronUp} from "lucide-react";
 const HeroSection = () => {
     return (
         <section className={"pb-12 md:pb-24"}>
+
             <div className={"relative flex flex-col items-center xl:h-115"}>
                 <div className={"xl:absolute relative w-full"}>
-                    <img src={"/theweeknd.jpg"} className={"h-40 md:h-80 w-full object-cover object-[0%_30%]"}/>
+                    <img src={"/theweeknd.jpg"} className={"h-50 md:h-80 w-full object-cover object-[0%_30%]"}/>
                     <div
                         className='absolute before:content-[""] bottom-0 right-0 border-16 border-solid border-b-white dark:border-b-[#212121] border-r-white dark:border-r-[#212121] border-t-fuchsia-600 border-l-fuchsia-600 block w-0'/>
                 </div>
@@ -17,7 +18,7 @@ const HeroSection = () => {
                         {/* First Column - Stack from bottom to top */}
                         <div className={"h-full grid grid-rows-3 "}>
                             <div className={"w-full h-full  row-start-1 flex flex-col justify-center text-white"}>
-                                <h1 className={"font-bold text-3xl"}>Top 50 Local Hits</h1>
+                                <h1 className={"font-bold text-3xl"}>Top 20 Artists</h1>
                                 <p className={"italic font-light"}>the week of June 30, 2020</p>
                             </div>
                             <div className={"relative w-full mask-intersect h-full row-start-2 row-span-2"}>
@@ -53,8 +54,7 @@ const HeroSection = () => {
                             <div className={"row-start-3 flex flex-col justify-center"}>
                                 <div className={"flex gap-8 items-center "}>
                                     <div className={"flex flex-col items-center gap-2"}>
-                                        <div
-                                            className={"text-4xl flex items-center font-bold text-[#121212] dark:text-white  "}>
+                                        <div className={"text-4xl flex items-center font-bold text-[#121212] dark:text-white  "}>
                                             <span>1</span><span><ChevronUp className={"text-green-600"}/></span></div>
                                         <div className={"text-sm text-center"}>this week</div>
                                     </div>

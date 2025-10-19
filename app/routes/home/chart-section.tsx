@@ -1,61 +1,33 @@
-import React from 'react';
-import FoldedBadge from "~/components/folded-badge";
-import {ChevronUp} from "lucide-react";
-import {AltArrowDown, MenuDots} from "@solar-icons/react/ssr";
+import {Link} from "react-router";
+import ChartListItem from "~/routes/home/chart-list-item";
 
 const ChartSection = () => {
     return (
         <section className={"w-full flex flex-col items-center text-white"}>
-            <div className={"max-w-screen-xl w-full flex flex-col items-center px-4 xl:px-0 h-full"}>
-                <div className={"w-full mb-8"}>
-                    <h2 className={"font-bold text-2xl"}>
-                        Top Trending Music
-                    </h2>
+            <div className={"max-w-screen-xl w-full flex space-y-8 flex-col items-center px-4 xl:px-0 h-full"}>
+                <div className={"w-full text-[#121212] dark:text-white flex flex-col gap-2"}>
+                    <div>
+                        <h2 className={"text-center md:text-left font-bold text-2xl md:text-4xl"}>
+                            Top Trending Music This Week
+                        </h2>
+                    </div>
+                    <div className={"text-center lg:text-left"}>
+                        <p className={"lg:text-lg text-neutral-500 max-w-sm"}>
+                            The week of 30<sup>th</sup> June 2025.
+                        </p>
+                    </div>
                 </div>
-                {Array.from({length: 10}).map((_, index) => (
-                    <div key={index}
-                         className={"bg-neutral-800 p-4 w-full border-b border-neutral-700/50 flex justify-center"}>
-                        <div className={"grid grid-cols-5 md:grid-cols-9 items-center w-full"}>
-                            <div className={"hidden md:flex justify-center font-semibold text-white text-2xl"}>
-                                <FoldedBadge className={"text-white"} text={`${index + 1}`}/></div>
-                            <div className={"md:hidden flex-col items-center gap-2"}>
-                                <div className={"text-lg flex items-center font-bold text-white"}>
-                                    <span>{index + 2}</span><span><ChevronUp
-                                    className={"size-4 md:size-auto text-green-600"}/></span></div>
-                            </div>
-                            <div className={"col-span-3 flex items-center md:justify-center xl:justify-start gap-4"}>
-                                <div className={"relative"}>
-                                    <img src={"/theweeknd2.jpg"}
-                                         className={"aspect-square h-16 w-16 object-cover"}/>
-                                    <div
-                                        className='absolute before:content-[""] bottom-0 right-0 border-6 border-solid border-b-neutral-800 border-r-neutral-800 border-t-fuchsia-600 border-l-fuchsia-600 block w-0'/>
-                                </div>
-                                <div className={"flex flex-col"}>
-                                    <span className={"text-lg font-bold text-white"}>The Weeknd</span>
-                                    <span className={"text-xs text-neutral-500"}>labels</span>
-                                </div>
-                            </div>
-                            <div className={"hidden md:flex flex-col items-center gap-2"}>
-                                <div className={"text-lg flex items-center font-bold text-white "}>
-                                    <span>1</span><span><ChevronUp className={"text-green-600"}/></span></div>
-                                <div className={"text-xs text-center text-neutral-500"}>this week</div>
-                            </div>
-                            <div className={"hidden md:flex flex-col items-center gap-2"}>
-                                <div className={"text-lg font-bold text-white "}>3</div>
-                                <div className={"text-xs text-center text-neutral-500"}>last week</div>
-                            </div>
-                            <div className={"hidden md:flex flex-col items-center gap-2"}>
-                                <div className={"text-lg font-bold text-white "}>258</div>
-                                <div className={"text-xs text-center text-neutral-500 "}>weeks on chart</div>
-                            </div>
-                            <div className={"hidden md:flex flex-col items-center gap-2"}>
-                                <div className={"text-lg font-bold text-white "}>1</div>
-                                <div className={"text-xs text-center text-neutral-500"}>peak</div>
-                            </div>
-                            <div className={"md:flex w-full justify-center text-white hidden "}><MenuDots/></div>
-                            <div className={"md:hidden w-full justify-end text-white flex "}><AltArrowDown/></div>
-                        </div>
-                    </div>))}
+                <div className={"w-full"}>
+                    {Array.from({length: 10}).map((_, index) => (
+                        <ChartListItem key={index} index={index}/>
+                    ))}
+                </div>
+                <Link to={"#"} className={"mt-8"}>
+                    <button
+                        className={"flex items-center font-bold bg-fuchsia-600 text-white dark:text-[#121212] dark:bg-white py-2 px-4"}>
+                        View All
+                    </button>
+                </Link>
             </div>
         </section>
     );

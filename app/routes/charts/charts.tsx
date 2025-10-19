@@ -1,10 +1,11 @@
 import React from 'react';
 import HeroSection from "~/routes/charts/hero-section";
 import ChartSection from "~/routes/charts/chart-section";
+import ChartNav from "~/routes/charts/chart-nav";
 
 const Charts = () => {
     return (
-        <main className={"space-y-8 xl:space-y-24"}>
+        <main>
             <HeroSection/>
             <ChartSection/>
         </main>

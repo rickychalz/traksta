@@ -9,7 +9,7 @@ export const ThreadsLogo: IconType = ({ className, strokeWidth }) => {
             className={ className}
             fill="currentColor"
             stroke="currentColor"
-            strokeWidth={strokeWidth ?? 1}
+            strokeWidth={1.5}
             aria-hidden="true"
         >
             <path d="M446.7,1000h-0.3c-149.2-1-263.9-50.2-341-146.2C36.9,768.3,1.5,649.4,0.3,500.4v-0.7c1.2-149.1,36.6-267.9,105.2-353.4

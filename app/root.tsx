@@ -45,11 +45,22 @@ export function Layout({children}: { children: React.ReactNode }) {
 
 export default function App() {
     return (
-        <>
-            <Navbar/>
-            <Outlet/>
-            <Footer/>
-        </>
+        <div className="flex flex-col min-h-screen">
+            {/* Navbar always at top */}
+            <header>
+                <Navbar />
+            </header>
+
+            {/* Main content grows to fill space */}
+            <main className="flex-grow pt-16">
+                <Outlet />
+            </main>
+
+            {/* Footer always at bottom */}
+            <footer>
+                <Footer />
+            </footer>
+        </div>
     );
 }
 
